@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanna Mae T. Hatulan | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;800&family=Sen:wght@800&family=Roboto:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#0F0A1A; --bg-mid:#1E1B2E; --violet:#3E1467; --purple:#A855F7; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--white);overflow-x:hidden;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+section{padding:90px 8%}
+.container{max-width:1240px;margin:0 auto}
+:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+ 
+/* ---------- NAVBAR ---------- */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:18px 6%;
+  display:flex;align-items:center;justify-content:space-between;transition:.3s}
+header.scrolled{background:rgba(15,10,26,.88);backdrop-filter:blur(10px);box-shadow:0 4px 25px rgba(168,85,247,.2)}
+.logo{width:84px;height:78px;max-height:60px;width:64px;border-radius:50%;background:var(--violet);
+  display:grid;place-items:center;font-family:'Sen',sans-serif;font-weight:800;font-size:24px;
+  box-shadow:0 0 18px rgba(168,85,247,.55);transition:.3s}
+.logo:hover{transform:scale(1.08) rotate(-4deg)}
+nav ul{display:flex;gap:42px;list-style:none}
+nav a{font-weight:500;font-size:18px;position:relative;padding:4px 0;transition:.3s}
+nav a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--purple);
+  box-shadow:0 0 8px var(--purple);transition:.3s}
+nav a:hover,nav a.active{color:var(--purple)}
+nav a:hover::after,nav a.active::after{width:100%}
+.hire{position:relative;font-family:'Roboto',sans-serif;font-weight:600;font-size:20px;background:#1E1E1E;
+  border:1px solid #000;border-radius:16px;padding:6px 40px;transition:.3s;
+  box-shadow:0 0 14px rgba(168,85,247,.7),inset 0 0 0 2px var(--purple)}
+.hire:hover{transform:translateY(-3px);box-shadow:0 0 28px var(--purple),inset 0 0 0 2px var(--purple)}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
+ 
+/* ---------- HERO ---------- */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:40px;
+  padding-top:130px;background:radial-gradient(circle at 80% 30%,rgba(168,85,247,.22),transparent 55%),var(--bg-dark);
+  position:relative;overflow:hidden}
+.hero-text{max-width:600px;z-index:1}
+.hi{font-size:32px;font-weight:800}
+.name{font-size:clamp(42px,6vw,75px);font-weight:800;line-height:1.2;color:var(--purple);
+  text-shadow:0 0 25px rgba(168,85,247,.55);margin:6px 0 14px}
+.role{font-size:clamp(20px,2.4vw,32px);font-weight:500;min-height:1.4em}
+.role .hl{color:var(--purple)}
+.cursor{display:inline-block;width:3px;height:1em;background:var(--purple);margin-left:3px;vertical-align:-4px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.intro{font-weight:300;font-size:20px;max-width:520px;margin:14px 0 36px}
+.btn{display:inline-block;background:var(--purple);border:1px solid #000;border-radius:15px;
+  font-family:'Roboto',sans-serif;font-weight:800;font-size:22px;padding:14px 46px;cursor:pointer;color:#fff;
+  box-shadow:0 0 22px rgba(168,85,247,.65);transition:.3s;position:relative;overflow:hidden}
+.btn::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:.6s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 0 38px var(--purple)}
+.btn:hover::before{left:140%}
+.hero-img{position:relative;width:min(424px,90%);flex-shrink:0;z-index:1}
+.hero-img .frame{border:9px solid var(--purple);border-radius:29px;background:var(--bg-mid);
+  box-shadow:0 0 35px rgba(168,85,247,.7),inset 0 0 20px rgba(168,85,247,.3);
+  aspect-ratio:424/346;overflow:visible;animation:float 5s ease-in-out infinite}
+.hero-img img{width:105%;max-width:none;margin:-60px 0 0 -2.5%;object-fit:cover;object-position:top;
+  height:calc(100% + 60px);border-radius:0 0 20px 20px}
+@keyframes float{50%{transform:translateY(-12px)}}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none}
+.orb.a{width:300px;height:300px;background:#33296C;top:10%;left:-80px}
+ 
+/* ---------- ABOUT ---------- */
+#about{background:var(--bg-mid)}
+#about .container{display:flex;align-items:center;gap:70px}
+.about-img{flex-shrink:0;width:min(365px,80%);aspect-ratio:365/385;border-radius:50%;border:8px solid var(--purple);
+  background:var(--violet);box-shadow:0 0 40px rgba(168,85,247,.75),inset 0 0 25px rgba(168,85,247,.4);
+  overflow:hidden;transition:.4s}
+.about-img:hover{transform:scale(1.04) rotate(2deg);box-shadow:0 0 60px var(--purple)}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+h2{font-size:clamp(28px,3.4vw,36px);font-weight:800;margin-bottom:26px}
+h2 span{color:var(--purple)}
+.about-text h2{font-size:32px}
+.about-text p{font-size:19px;line-height:1.55;margin-bottom:18px}
+ 
+/* ---------- SKILLS ---------- */
+#skills{background:var(--bg-dark);text-align:center}
+.skills-grid{display:grid;grid-template-columns:repeat(3,291px);gap:78px 130px;justify-content:center;margin-top:70px}
+.skill{height:89px;background:var(--violet);border:7px solid var(--purple);border-radius:25px;
+  display:flex;align-items:center;gap:22px;padding:0 20px;font-weight:800;font-size:30px;
+  box-shadow:0 0 28px rgba(168,85,247,.7),inset 0 0 14px rgba(168,85,247,.35);transition:.3s;cursor:default}
+.skill img{width:52px;height:52px;object-fit:contain}
+.skill:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 0 45px var(--purple),inset 0 0 20px rgba(168,85,247,.6)}
+.skills-grid .skill:nth-child(4){grid-column:1}
+.skills-grid .skill:nth-child(5){grid-column:2}
+ 
+/* ---------- PROJECTS ---------- */
+#projects{background:var(--bg-mid);text-align:center}
+.proj-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-top:60px;padding:0 3%}
+.card{width:430px;max-width:100%;background:var(--violet);border-radius:23px;padding:40px 30px 36px;
+  display:flex;flex-direction:column;align-items:center;gap:26px;transition:.35s}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 40px rgba(168,85,247,.65)}
+.card .shot{width:100%;height:230px;display:grid;place-items:center;overflow:hidden}
+.card .shot img{max-height:100%;object-fit:contain;transition:.4s}
+.card:hover .shot img{transform:scale(1.07)}
+.card h3{font-size:24px;font-weight:800}
+.card .btn.small{font-family:'Inter',sans-serif;font-size:22px;padding:5px 0;width:160px;border:0;border-radius:9px}
+ 
+/* ---------- CONTACT ---------- */
+#contact{background:var(--bg-dark)}
+#contact h2{font-size:48px;margin-bottom:60px}
+#contact .container{display:flex;justify-content:space-between;gap:60px;align-items:flex-start;flex-wrap:wrap}
+.info{display:flex;flex-direction:column;gap:38px;font-weight:800;font-size:24px}
+.info .row{display:flex;align-items:center;gap:26px}
+.info .row img{width:49px;height:49px;object-fit:contain;flex-shrink:0;transition:.3s}
+.info .row:hover img{transform:scale(1.15);filter:drop-shadow(0 0 8px var(--purple))}
+.socials{display:flex;gap:42px;margin-top:20px;padding-left:10px}
+.socials a{width:47px;height:47px;display:block;transition:.3s}
+.socials img{width:100%;height:100%;object-fit:contain}
+.socials a:hover{transform:translateY(-6px) scale(1.12);filter:drop-shadow(0 0 10px var(--purple))}
+form{width:671px;max-width:100%;background:var(--violet);border-radius:29px;padding:24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;box-shadow:0 0 30px rgba(168,85,247,.3)}
+form input,form textarea{width:100%;background:#D9D9D9;border:2px solid transparent;border-radius:8px;
+  font-family:'Inter',sans-serif;font-weight:300;font-size:22px;color:#000;padding:8px 14px;transition:.3s}
+form textarea{grid-column:1/-1;height:221px;resize:vertical;padding-top:16px}
+form input:focus,form textarea:focus{outline:0;border-color:var(--purple);box-shadow:0 0 18px var(--purple)}
+form .btn{grid-column:1/-1;justify-self:end;font-size:20px;padding:10px 36px}
+#formMsg{grid-column:1/-1;font-size:17px;min-height:22px}
+#formMsg.err{color:#ffb4c1}#formMsg.ok{color:#b6f5c8}
+footer{text-align:center;padding:22px;background:#0a0612;font-weight:300;font-size:15px}
+ 
+/* ---------- SCROLL REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.reveal.show{opacity:1;transform:none}
+ 
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1150px){
+  .skills-grid{grid-template-columns:repeat(2,291px);gap:50px 60px}
+  .skills-grid .skill:nth-child(4){grid-column:auto}.skills-grid .skill:nth-child(5){grid-column:auto}
+  .proj-grid{justify-content:center}
+}
+@media(max-width:900px){
+  nav{position:fixed;top:0;right:-100%;width:70%;height:100vh;background:rgba(15,10,26,.97);
+    display:grid;place-items:center;transition:.4s;box-shadow:-10px 0 40px rgba(168,85,247,.3)}
+  nav.open{right:0}
+  nav ul{flex-direction:column;align-items:center;gap:34px}
+  .menu-btn{display:block;z-index:101}
+  .hire{display:none}
+  #home{flex-direction:column;text-align:center;padding-top:120px}
+  .intro{margin-left:auto;margin-right:auto}
+  #about .container{flex-direction:column;text-align:center}
+  .hero-img{margin-top:30px}
+}
+@media(max-width:700px){
+  section{padding:70px 6%}
+  .skills-grid{grid-template-columns:minmax(0,291px)}
+  .info{font-size:18px}.info .row{gap:16px}
+  form{grid-template-columns:1fr}
+  .about-text p{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+ 
+<!-- ============ NAVBAR ============ -->
+<header id="navbar">
+  <a href="#home" class="logo" aria-label="VH home">VH</a>
+  <nav id="nav">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Project</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="#contact" class="hire">Hire Me</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
+</header>
+ 
+<!-- ============ HOME ============ -->
+<section id="home">
+  <div class="orb a"></div>
+  <div class="hero-text">
+    <p class="hi">Hi, I’m</p>
+    <h1 class="name">Vanna Mae T. Hatulan</h1>
+    <p class="role"><span id="typed"></span><span class="cursor"></span></p>
+    <p class="intro">A creative individual passionate about digital design, visual editing, and technology. I enjoy bringing ideas to life through Canva while exploring programming and discovering new ways to create engaging digital experiences.</p>
+    <a href="cv/Vanna-Mae-Hatulan-CV.pdf" download class="btn">Download CV</a>
+  </div>
+  <div class="hero-img">
+    <div class="frame"><img src="assets/profile.png" alt="Vanna Mae T. Hatulan"></div>
+  </div>
+</section>
+ 
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="about-img reveal"><img src="assets/profile.png" alt="Vanna Mae smiling"></div>
+    <div class="about-text reveal">
+      <h2>About <span>Me</span></h2>
+      <p>I am a BSIT student with a strong passion for digital design, creative editing, and technology. One of my strongest skills is using Canva to create visually appealing designs, presentation templates, infographics, and other creative materials. I enjoy experimenting with layouts, colors, typography, and visual elements to transform ideas into engaging and well-organized designs.</p>
+      <p>Alongside my creative skills, I am developing my programming knowledge in Java and JavaScript while gaining introductory experience with HTML through my studies. Beyond technology, I have a genuine interest in Biology, which reflects my curiosity about science and how the world works. I enjoy exploring new ideas, improving my skills, and expressing my creativity through different projects while continuing to grow as both a creative individual and an IT student.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="container">
+    <h2 class="reveal">My <span>Skills</span></h2>
+    <div class="skills-grid reveal">
+      <div class="skill"><img src="assets/canvaicon.png" alt="">Canva</div>
+      <div class="skill"><img src="assets/mysql.png" alt="">My SQL</div>
+      <div class="skill"><img src="assets/java.png" alt="">JavaScript</div>
+      <div class="skill"><img src="assets/css-3.png" alt="">CSS</div>
+      <div class="skill"><img src="assets/text.png" alt="">HTML</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="container">
+    <h2 class="reveal">My <span>Projects</span></h2>
+    <div class="proj-grid">
+      <article class="card reveal">
+        <div class="shot"><img src="assets/onileordering.png" alt="Ordering System preview"></div>
+        <h3>Ordering System</h3>
+        <a href="#" class="btn small">View more</a>
+      </article>
+      <article class="card reveal">
+        <div class="shot"><img src="assets/attendance.jpg" alt="Attendance Tracker preview"></div>
+        <h3>Attendance Tracker</h3>
+        <a href="#" class="btn small">View more</a>
+      </article>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <h2>Contact</h2>
+      <div class="info">
+        <div class="row">
+          <img src="assets/mail.png" alt="">
+          <span>banamae12@gmail.com</span>
+        </div>
+        <div class="row">
+          <img src="assets/phone%20(1).png" alt="">
+          <span>0970-883-1148</span>
+        </div>
+        <div class="row">
+          <img src="assets/placeholder.png" alt="">
+          <span>Casilda, Merida, Leyte</span>
+        </div>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><img src="assets/instagram%20(3).png" alt="Instagram"></a>
+          <a href="#" aria-label="Facebook"><img src="assets/facebook%20(1).png" alt="Facebook"></a>
+        </div>
+      </div>
+    </div>
+ 
+    <form id="contactForm" class="reveal" novalidate>
+      <input type="text" id="name" placeholder="Name" aria-label="Name">
+      <input type="email" id="email" placeholder="Email" aria-label="Email">
+      <textarea id="message" placeholder="Write Message" aria-label="Message"></textarea>
+      <p id="formMsg" role="status"></p>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </div>
+</section>
+ 
+<footer>© 2026 Vanna Mae T. Hatulan. All rights reserved.</footer>
+ 
+<script>
+/* Navbar: shadow on scroll + active link */
+const navbar = document.getElementById('navbar');
+const links = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  let current = 'home';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
+  links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+});
+ 
+/* Mobile menu */
+const nav = document.getElementById('nav');
+const menuBtn = document.getElementById('menuBtn');
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  menuBtn.innerHTML = nav.classList.contains('open') ? '&#10005;' : '&#9776;';
+});
+links.forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menuBtn.innerHTML = '&#9776;'; }));
+ 
+/* Typing effect */
+const words = ['IT Student | Aspiring '];
+const typed = document.getElementById('typed');
+const full = 'IT Student | Aspiring Creative Designer';
+let i = 0;
+(function type() {
+  const text = full.slice(0, i);
+  const split = 'IT Student | Aspiring '.length;
+  typed.innerHTML = i <= split ? text : 'IT Student | Aspiring <span class="hl">' + full.slice(split, i) + '</span>';
+  if (i++ < full.length) setTimeout(type, 70);
+})();
+ 
+/* Scroll reveal */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+}, { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+ 
+/* Contact form: validate then open email app */
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('formMsg');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = form.name.value.trim(), email = form.email.value.trim(), text = form.message.value.trim();
+  msg.className = '';
+  if (!name || !email || !text) { msg.textContent = 'Please fill in your name, email, and message.'; msg.className = 'err'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter a valid email address.'; msg.className = 'err'; return; }
+  const body = encodeURIComponent(text + '\n\nFrom: ' + name + ' (' + email + ')');
+  window.location.href = 'mailto:banamae12@gmail.com?subject=' + encodeURIComponent('Portfolio message from ' + name) + '&body=' + body;
+  msg.textContent = 'Thank you! Your email app is opening.'; msg.className = 'ok';
+  form.reset();
+});
+</script>
+</body>
+</html>
